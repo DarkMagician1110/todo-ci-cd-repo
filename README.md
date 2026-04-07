@@ -1,56 +1,51 @@
-🚀 Todo App with CI/CD
-📌 Description
+# 🚀 Ứng dụng Quản lý Công việc (Todo App) với CI/CD
 
-Fullstack Todo App with CI/CD pipeline (auto test & deploy) using GitHub Actions and Render.
+Dự án này là một ứng dụng Fullstack đơn giản được xây dựng để minh họa quy trình **CI/CD (Tích hợp và Triển khai liên tục)** tự động bằng cách sử dụng **GitHub Actions** và nền tảng **Render**.
 
-⚙️ Features
-➕ Add todo
-📄 Get all todos
-❌ Delete todo
-🛠️ Tech Stack
-Backend: Node.js (Express)
-Frontend: HTML, CSS, JavaScript
-CI/CD: GitHub Actions
-Deployment: Render
-🔄 CI/CD Pipeline
+---
 
-This project demonstrates a simple CI/CD workflow:
+## 📌 Mô tả dự án
+Hệ thống này trình diễn một luồng công việc (workflow) tự động hóa hoàn toàn: Từ khi lập trình viên đẩy mã nguồn (push code) lên GitHub, hệ thống sẽ tự động kiểm thử và triển khai phiên bản mới nhất lên môi trường chạy thực tế.
 
-Push code to GitHub
-GitHub Actions runs:
-Install dependencies
-Run tests
-If tests pass → trigger deployment on Render
-📂 Project Structure
-backend/
-  src/
-    controllers/
-    routes/
-    app.js
-  tests/
+---
 
-frontend/
-  index.html
-  script.js
-▶️ Run Locally
-Backend
-cd backend
-npm install
-npm start
-Frontend
-Open frontend/index.html
-Or use Live Server (recommended)
-🌐 Deployment
+## ✨ Tính năng chính
+* ➕ **Thêm công việc:** Tạo mới nhiệm vụ nhanh chóng.
+* 📄 **Xem danh sách:** Hiển thị toàn bộ công việc trong thời gian thực.
+* ❌ **Xóa công việc:** Loại bỏ các nhiệm vụ đã hoàn thành hoặc không cần thiết.
+* 🛠️ **Hệ thống CI/CD:** Tự động hóa khâu kiểm tra chất lượng và phát hành.
 
-The application is automatically deployed on Render after a successful CI pipeline.
+---
 
-🎯 Purpose
+## 🛠️ Công nghệ sử dụng
+| Thành phần | Công nghệ |
+| :--- | :--- |
+| **Backend** | Node.js (Express) |
+| **Frontend** | HTML5, CSS3, JavaScript |
+| **Công cụ CI/CD** | GitHub Actions |
+| **Nền tảng triển khai** | Render |
 
-This project is built for learning and demonstrating:
+---
 
-Continuous Integration (CI)
-Continuous Deployment (CD)
-Automated testing and deployment workflow
-🧠 Summary
+## 🔄 Quy trình CI/CD Pipeline
+Luồng tự động hóa được thiết lập như sau:
+1. **Đẩy mã nguồn:** Lập trình viên `push code` lên kho lưu trữ GitHub.
+2. **GitHub Actions kích hoạt:**
+    * 🏗️ **Khởi tạo:** Thiết lập môi trường và cài đặt các thư viện cần thiết (`dependencies`).
+    * 🧪 **Kiểm thử:** Chạy các bài test tự động (`npm test`).
+3. **Triển khai:** Nếu tất cả các bài test đều vượt qua 🟢, hệ thống sẽ gửi lệnh kích hoạt để **Render** tự động cập nhật bản build mới nhất lên server.
 
-This project showcases how to automate testing and deployment of a web application using GitHub Actions and Render.
+---
+
+## 📂 Cấu trúc dự án
+```text
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   └── routes/
+│   ├── app.js
+│   └── tests/      <-- Nơi chứa các bài kiểm thử tự động
+└── frontend/
+    ├── index.html
+    └── script.js
+
