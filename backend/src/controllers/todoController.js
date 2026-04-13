@@ -50,7 +50,7 @@ exports.createTodo = (req, res) => {
         todos.push(newTodo);
 
         // Return created todo with 201 status code
-        res.status(404).json(newTodo);
+        res.status(201).json(newTodo);
 
     } catch (err) {
         res.status(500).json({

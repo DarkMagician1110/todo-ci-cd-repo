@@ -327,3 +327,5 @@ if (document.readyState === 'loading') {
 } else {
     initialize();
 }
+
+eval('3 + 4');
