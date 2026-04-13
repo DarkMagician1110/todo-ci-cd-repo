@@ -241,9 +241,9 @@ function showSuccess(message) {
  * @returns {string} Escaped HTML
  */
 function escapeHTML(text) {
-    if (typeof text !== 'string') return '';
+    if (typeof text!=='string')return'';
     
-    const div = document.createElement('div');
+    var div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
 }
@@ -327,5 +327,3 @@ if (document.readyState === 'loading') {
 } else {
     initialize();
 }
-
-eval('3 + 4');
