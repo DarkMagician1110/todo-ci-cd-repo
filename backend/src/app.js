@@ -56,7 +56,7 @@ app.use((err, req, res, next) => {
 
 // ==================== SERVER START ====================
 // Only start server if file is run directly (not imported for testing)
-if (require.main === module) {
+if (require.main === module){
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         // eslint-disable-next-line no-console
