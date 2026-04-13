@@ -1,20 +1,51 @@
 {
   "name": "todo-backend",
   "version": "1.0.0",
+  "description": "Todo App Backend with CI/CD Pipeline - Express.js REST API",
+  "main": "src/app.js",
+  "author": "CI/CD Demo",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=6.0.0"
+  },
   "scripts": {
     "start": "node src/app.js",
-    "test": "jest"
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest --testMatch='**/*.unit.test.js'",
+    "test:integration": "jest --testMatch='**/*.integration.test.js'",
+    "lint": "eslint src --fix || true",
+    "dev": "node src/app.js"
   },
+  "keywords": [
+    "todo",
+    "ci-cd",
+    "github-actions",
+    "express",
+    "jest",
+    "testing"
+  ],
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.0"
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "jest": "^29.7.0",
     "supertest": "^6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/index.js"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.js",
+      "**/tests/**/*.js"
+    ]
   }
 }

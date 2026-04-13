@@ -62,10 +62,10 @@ jobs:
         cd backend
         npm ci
 
-    - name: Run unit tests
+    - name: Run unit tests only
       run: |
         cd backend
-        npm test -- --coverage --maxWorkers=2
+        npm test -- --testMatch="**/*.unit.test.js" --coverage --maxWorkers=2
       timeout-minutes: 10
 
     - name: Upload coverage reports

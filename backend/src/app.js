@@ -1,16 +1,65 @@
 const express = require('express');
 const cors = require('cors');
+
+// Initialize Express app
 const app = express();
 
+// ==================== MIDDLEWARE ====================
+// Enable CORS for all routes (allow frontend to access API)
 app.use(cors({ origin: '*' }));
+
+// Parse JSON request bodies
 app.use(express.json());
 
-// routes
+// Request logging middleware (optional)
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+  next();
+});
+
+// ==================== ROUTES ====================
+// Mount todo routes at /todos endpoint
 app.use('/todos', require('./routes/todoRoutes'));
 
-module.exports = app;
+// ==================== HEALTH CHECK ====================
+// Health endpoint for monitoring
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'OK',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
 
-// run server
+// ==================== ERROR HANDLING ====================
+// 404 Not Found handler
+app.use((req, res) => {
+  res.status(404).json({
+    error: 'Not Found',
+    path: req.path,
+    method: req.method
+  });
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error(`[ERROR] ${err.message}`);
+  res.status(500).json({
+    error: 'Internal Server Error',
+    message: err.message
+  });
+});
+
+// ==================== SERVER START ====================
+// Only start server if file is run directly (not imported for testing)
 if (require.main === module) {
-    app.listen(3000, () => console.log("Server running on port 3000"));
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`✅ Server running on http://localhost:${PORT}`);
+    console.log(`📍 Health check: http://localhost:${PORT}/health`);
+    console.log(`📋 API endpoint: http://localhost:${PORT}/todos`);
+  });
 }
+
+// Export app for testing with supertest
+module.exports = app;

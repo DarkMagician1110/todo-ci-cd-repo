@@ -1,20 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Todo App</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📋 Todo App - CI/CD Demo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <header class="header">
+            <h1>📋 Todo App</h1>
+            <p class="subtitle">CI/CD Pipeline Demo - Full Stack Application</p>
+        </header>
 
-<h1>Todo App 🚀</h1>
+        <main>
+            <!-- Input Section -->
+            <div class="input-section">
+                <input
+                    type="text"
+                    id="todoInput"
+                    class="input-field"
+                    placeholder="✏️ What needs to be done?"
+                    autocomplete="off"
+                />
+                <button id="addBtn" class="btn btn-primary">➕ Add Todo</button>
+            </div>
 
-<div class="input-box">
-  <input id="todoInput" placeholder="Enter todo...">
-  <button onclick="addTodo()">Add</button>
-</div>
+            <!-- Stats Section -->
+            <div class="stats">
+                <span id="todoCount" class="stat-item">📊 Total: 0</span>
+                <button id="clearBtn" class="btn btn-secondary btn-small">🗑️ Clear All</button>
+            </div>
 
-<ul id="todoList"></ul>
+            <!-- Todo List Section -->
+            <section class="todo-section">
+                <h2>📝 My Tasks</h2>
+                <ul id="todoList" class="todo-list">
+                    <li class="empty-state">
+                        🎉 No todos yet! Add one to get started.
+                    </li>
+                </ul>
+            </section>
 
-<script src="script.js"></script>
+            <!-- API Status Section -->
+            <section class="api-status">
+                <h3>🔗 API Status</h3>
+                <div id="apiStatus" class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span id="statusText">Checking...</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>🚀 Powered by Express.js Backend & GitHub Actions CI/CD</p>
+            <p class="footer-links">
+                <a href="#" onclick="openAPI()">📚 API Docs</a> |
+                <a href="https://github.com" target="_blank">GitHub</a> |
+                <a href="#" onclick="showAbout()">ℹ️ About</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Modal for About -->
+    <div id="aboutModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeAbout()">&times;</span>
+            <h2>ℹ️ About This Project</h2>
+            <p>This is a <strong>CI/CD pipeline demonstration project</strong> featuring:</p>
+            <ul>
+                <li>✅ Express.js Backend API</li>
+                <li>✅ 14 Automated Tests (Unit + Integration)</li>
+                <li>✅ GitHub Actions Pipeline (7 jobs)</li>
+                <li>✅ Security Scanning</li>
+                <li>✅ Auto Deploy to Render</li>
+            </ul>
+            <p><strong>API Endpoint:</strong> <code>http://localhost:3000/todos</code></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
