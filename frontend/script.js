@@ -165,7 +165,7 @@ async function deleteTodo(id) {
 async function clearAllTodos() {
     const todoItems = document.querySelectorAll('.todo-item');
     
-    if (  todoItems.length === 0) {
+    if (todoItems.length===0) {
         showError('No todos to clear');
         return;
     }
