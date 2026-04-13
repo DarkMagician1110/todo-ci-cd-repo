@@ -26,7 +26,7 @@ exports.createTodo = (req, res) => {
 
         // ==================== VALIDATION ====================
         // Trim whitespace from input
-        if (title && typeof title==='string'){
+        if (title && typeof title === 'string') {
             title = title.trim();
         }
 

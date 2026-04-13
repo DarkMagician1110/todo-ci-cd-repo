@@ -22,6 +22,7 @@
     "key-spacing": "error",
     "comma-spacing": "error",
     "object-curly-spacing": ["error", "always"],
+    "space-before-blocks": "error",
     "no-eval": "error"
   }
 }
