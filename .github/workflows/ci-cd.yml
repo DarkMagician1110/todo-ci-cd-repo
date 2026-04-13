@@ -35,7 +35,7 @@ jobs:
     - name: Check code style
       run: |
         cd backend
-        npm run lint --if-present || true
+        npm run lint --if-present
 
   # ==================== BACKEND TESTING ====================
   test-backend:
