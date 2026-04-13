@@ -1,0 +1,27 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": ["error", 4],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "space-infix-ops": "error",
+    "eqeqeq": ["error", "always"],
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "keyword-spacing": "error",
+    "key-spacing": "error",
+    "comma-spacing": "error",
+    "object-curly-spacing": ["error", "always"],
+    "no-eval": "error"
+  }
+}
