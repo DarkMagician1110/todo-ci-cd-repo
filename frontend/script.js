@@ -36,3 +36,4 @@ async function deleteTodo(id) {
 }
 
 loadTodos();
+eval("1 + 1"); 
