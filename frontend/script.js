@@ -327,3 +327,4 @@ if (document.readyState === 'loading') {
 } else {
     initialize();
 }
+console.log(eval("4 + 5"));
