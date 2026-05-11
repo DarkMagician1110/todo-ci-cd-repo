@@ -1,3 +1,33 @@
+📊 CI/CD FLOW (7 JOBS)
+main ┌─ lint ──┐
+     │         │
+PR   └─ test-backend ── integration-tests ── deploy ── notify
+         │              │
+     build-frontend   security-scan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 🚀 How to Run Todo App
 
 ## 📋 Prerequisites
