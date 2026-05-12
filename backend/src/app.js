@@ -35,7 +35,7 @@ app.get('/health', (req, res) => {
 
 // ==================== ERROR HANDLING ====================
 // 404 Not Found handler
-app.use((req, res) => {
+app.use((req, res          ) => {
     res.status(404).json({
         error: 'Not Found',
         path: req.path,
