@@ -14,15 +14,19 @@
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "space-infix-ops": "error",
-    "eqeqeq": ["error", "always"],
     "no-unused-vars": "warn",
     "no-console": "warn",
-    "keyword-spacing": "error",
-    "key-spacing": "error",
-    "comma-spacing": "error",
-    "object-curly-spacing": ["error", "always"],
-    "space-before-blocks": "error",
-    "no-eval": "error"
+    "no-eval": "error",
+    "eqeqeq": ["error", "always"],
+
+    // ==================== CÁC QUY TẮC BẮT LỖI DẤU CÁCH ====================
+    "space-infix-ops": "error",          // Bắt lỗi: a===b (phải là a === b)
+    "keyword-spacing": ["error", { "before": true, "after": true }], // Bắt lỗi: if( (phải là if ()
+    "space-before-blocks": "error",      // Bắt lỗi: ){ (phải là ) {)
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }], // Bắt lỗi: {key:value}
+    "comma-spacing": ["error", { "before": false, "after": true }], // Bắt lỗi: [1,2]
+    "object-curly-spacing": ["error", "always"], // Bắt lỗi: {a:1}
+    "arrow-spacing": ["error", { "before": true, "after": true }], // Bắt lỗi: ()=> (phải là () =>)
+    "no-multi-spaces": "error"           // Ngăn chặn việc lạm dụng quá nhiều dấu cách thừa
   }
 }
