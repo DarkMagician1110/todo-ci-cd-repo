@@ -16,7 +16,8 @@
     "test:coverage": "jest --coverage",
     "test:unit": "jest --testMatch='**/*.unit.test.js'",
     "test:integration": "jest --testMatch='**/*.integration.test.js'",
-    "lint": "eslint src --fix --max-warnings=0",
+    "lint": "eslint . --ext .js --max-warnings=0",
+    "lint:fix": "eslint . --ext .js --fix",
     "dev": "node src/app.js"
   },
   "keywords": [
