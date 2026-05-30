@@ -31,7 +31,7 @@ exports.createTodo = (req, res) => {
         }
 
         // Check if title is empty or missing
-        if (!title || title == '') {
+        if (!title || title === '') {
             return res.status(400).json({
                 message: 'Title is required and cannot be empty'
             });
